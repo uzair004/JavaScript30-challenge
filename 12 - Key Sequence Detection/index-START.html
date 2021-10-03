@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="https://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+
+  Enter 'uzair' to see magic!
+
+<script>
+
+  let pressed = [];
+  let secretCode = 'uzair';
+
+  document.addEventListener('keyup', (e) => {
+    pressed.push(e.key);
+ 
+    if(pressed.length > secretCode.length) pressed.shift();
+
+    pressed.join('').includes(secretCode) ? cornify_add() : null;
+
+    console.log(pressed);
+  });
+
+</script>
+</body>
+</html>
